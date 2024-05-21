@@ -1,11 +1,14 @@
+
 import React, { useState, useEffect } from 'react'
 
-const ApiFetchingData = () => {
+const ApiFetchingData2 = () => {
+
   const [data, set_data]=useState(null)
   const [loading, set_loading]=useState(false)
   const [error, set_error]=useState(null)
 
-  let cont=[]
+  const data_parsed={}
+  const data_arr=[]
 
   const fetch_Data=()=>
     {
@@ -31,7 +34,6 @@ const ApiFetchingData = () => {
           // set_data(JSON.stringify(data))
           set_data(data)
           set_loading(false)
-          // data_str=JSON.stringify(data)
         }
       )
       .catch(error=>
@@ -47,10 +49,11 @@ const ApiFetchingData = () => {
     fetch_Data();
       },[]
     )
+  
   return (
-    <div >
+    <div>
       <h2>Fetching Data from an API</h2>
-      <div style={{textAlign:'left'}}>
+      <div>
         {
           loading && <p>Loading...</p>
         }
@@ -58,14 +61,20 @@ const ApiFetchingData = () => {
           error && <p>Error: {error}</p>
         }
         {
-          data && <p>{cont=data.data.map(i=>
-            <ul><li>{JSON.stringify(i)}</li></ul>
-          )}</p>
+          data && <ul>
+              {data_parsed=JSON.parse(data)}
+              {data_arr=Object.values(data_parsed)}
+              {data_arr.map((i)=>
+            (
+                <li>{JSON.stringify(i)}</li> 
+          ) 
+          )
+          }
+          </ul>
         }
-        {cont}
       </div>
     </div>
   )
 }
 
-export default ApiFetchingData
+export default ApiFetchingData2

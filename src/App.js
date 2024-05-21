@@ -1,14 +1,6 @@
 
+import ApiFetchingData from './ApiFetchingData';
 import './App.css';
-import StorageObjects2 from './StorageObjects2';
-// import LocalStorage from './Tables/StorageObjects';
-// import LocationSelector from './Tables/LocationSelector';
-// import StorageObjects from './Tables/StorageObjects';
-// import Log from './Tables/Log';
-// import Login from './Tables/Login';
-// import './Tables/LocationSelectorCSS.css';
-// import './Tables/Login.css';
-// import './Tables/Log.css';
 
 function App() {
   return (
@@ -27,9 +19,8 @@ function App() {
           Learn React
         </a>
       </header> */}
-      {/* <Students/> */}
       {/* <Login/> */}
-      <API1/>
+      <ApiFetchingData/>
     </div>
   );
 }
