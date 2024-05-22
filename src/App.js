@@ -1,6 +1,7 @@
 
-import ApiFetchingData from './ApiFetchingData';
+// import ApiFetchingData from './ApiFetchingData';
 import './App.css';
+import Counter from './Counter';
 
 function App() {
   return (
@@ -20,7 +21,7 @@ function App() {
         </a>
       </header> */}
       {/* <Login/> */}
-      <ApiFetchingData/>
+      <Counter/>
     </div>
   );
 }
